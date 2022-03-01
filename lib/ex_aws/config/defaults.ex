@@ -56,6 +56,11 @@ defmodule ExAws.Config.Defaults do
     |> Map.merge(defaults(:qldb))
   end
 
+  def defaults(:personalize_events) do
+    %{service_override: :personalize}
+    |> Map.merge(defaults(:personalize))
+  end
+  
   def defaults(:ingest_timestream) do
     %{service_override: :timestream}
     |> Map.merge(defaults(:timestream))
